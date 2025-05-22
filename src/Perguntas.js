@@ -144,6 +144,61 @@ export const intermediario = [
       "A execução de código assíncrono de forma síncrona"
     ],
     answer: "A elevação de variáveis e funções para o topo do seu escopo durante a execução"
+  },
+
+  {
+    question: "Qual método JavaScript é usado para transformar uma string em um array?",
+    options: [
+      "split()",
+      "join()",
+      "toArray()",
+      "parse()"
+    ],
+    answer: "split()"
+  },
+
+  {
+  question: "Qual dessas opções represents uma forma válida de comentar uma linha em JavaScript?",
+  options: [
+    "<!-- comentário -->",
+    "## comentário",
+    "// comentário",
+    "/* comentário */"
+  ],
+  answer: "// comentário"
+  },
+
+  {
+    question: "Qual das opções abaixo cria uma função anônima que retorna o dobro de um número?",
+    options: [
+      "function double(x) { return x * 2; }",
+      "(x) => x * 2",
+      "var double = function(x) { return x + 2; }",
+      "function(x) => x * 2"
+    ],
+    answer: "(x) => x * 2"
+  },
+
+  {
+    question: "Qual dessas estruturas serve para executar um código repetidamente enquanto uma condição for verdadeira?",
+    options: [
+      "if",
+      "switch",
+      "while",
+      "try...catch"
+    ],
+    answer: "while"
+  },
+
+  {
+    question: "Qual método retorna uma nova array com os elementos que passaram em um teste (função)?",
+    options: [
+      "filter()",
+      "map()",
+      "forEach()",
+      "reduce()"
+    ],
+    answer: "filter()"
   }
 ];
 
@@ -201,5 +256,60 @@ export const avancado = [
       "Funções que geram múltiplos valores simultaneamente"
     ],
     answer: "Funções que podem ser interrompidas e retomadas de onde pararam"
+  },
+
+  {
+    question: "Em um projeto React Native, qual hook é usado para executar um efeito colateral após a rederização de um componente?",
+    options: [
+      "useEffect()",
+      "useState()",
+      "useRef()",
+      "useLayoutEffect()"
+],
+    answer: "useEffect()"
+  },
+
+  {
+    question: "O que acontece quando você tenta acessar uma variável declarada com let antes de sua declaração?",
+    options: [
+      "Ocorrera um erro de sintaxe",
+      "Ocorrera um erro de referência",
+      "Ocorrera um erro de execução",
+      "Ocorrera um erro de semântica"
+    ],
+    answer: "Ocorrera um erro de referência"
+  },
+
+  {
+    question: "Qual dessas abordagens é mais eficiente para lidar com múltiplas chamadas assíncronas que dependem uma da outra em JavaScript?",
+    options: [
+      "Promises",
+      "Callbacks",
+      "Eventos",
+      "Async/Await"
+    ],
+    answer: "Async/Await"
+  },
+
+  {
+    question: "Qual é a principal vantagem do uso de async/await sobre Promises com .then()?",
+    options: [
+      "Melhora a performace do código",
+      "Evita o uso de variáveis",
+      "Permite execução síncronia real",
+      "Torna o código mais legível e fácil de manter",
+    ],
+    answer: "Torna o código mais legível e fácil de manter"
+  },
+
+  {
+    question: "Qual é o resultado da seguinte expressão [1, 2, 3] + [4, 5, 6] em JavaScript?",
+    options: [
+      "[1, 2, 3, 4, 5, 6]",
+      "[1, 2, 3, [4, 5, 6]]",
+      "[[1, 2, 3], [4, 5, 6]]",
+      "1,2,34,5,6"
+    ],
+    answer: "1,2,34,5,6"
   }
-];
+]
