@@ -2,92 +2,92 @@ export const basico = [
   {
     question: "O que é um loop 'for' em programação?",
     options: [
-      'Uma condição lógica',
-      'Uma estrutura de repetição',
-      'Um tipo de variável',
-      'Uma função matemática'
+      "Uma condição lógica",
+      "Uma estrutura de repetição",
+      "Um tipo de variável",
+      "Uma função matemática",
     ],
-    answer: 'Uma estrutura de repetição'
+    answer: "Uma estrutura de repetição",
   },
 
   {
-    question: 'Qual destes não é um tipo de dado primitivo em JavaScript?',
-    options: ['String', 'Boolean', 'Function', 'Number'],
-    answer: 'Function'
+    question: "Qual destes não é um tipo de dado primitivo em JavaScript?",
+    options: ["String", "Boolean", "Function", "Number"],
+    answer: "Function",
   },
 
   {
     question: "O que significa 'if' em programação?",
     options: [
-      'Definir uma variável',
-      'Executar um loop',
-      'Criar uma função',
-      'Criar uma condição'
+      "Definir uma variável",
+      "Executar um loop",
+      "Criar uma função",
+      "Criar uma condição",
     ],
-    answer: 'Criar uma condição'
+    answer: "Criar uma condição",
   },
 
   {
-    question: 'Qual símbolo é usado para comparação estrita em JavaScript?',
-    options: ['==', '=', '===', '!='],
-    answer: '==='
+    question: "Qual símbolo é usado para comparação estrita em JavaScript?",
+    options: ["==", "=", "===", "!="],
+    answer: "===",
   },
 
   {
-    question: 'O que um array armazena?',
+    question: "O que um array armazena?",
     options: [
-      'Somente números',
-      'Somente textos',
-      'Um conjunto de valores',
-      'Somente objetos'
+      "Somente números",
+      "Somente textos",
+      "Um conjunto de valores",
+      "Somente objetos",
     ],
-    answer: 'Um conjunto de valores'
+    answer: "Um conjunto de valores",
   },
 
   {
-    question: 'Qual destes é um operador lógico?',
-    options: ['+', '-', '&&', '%'],
-    answer: '&&'
+    question: "Qual destes é um operador lógico?",
+    options: ["+", "-", "&&", "%"],
+    answer: "&&",
   },
 
   {
     question: "O que 'NaN' significa em JavaScript?",
     options: [
-      'Número válido',
-      'Número negativo',
-      'Not a Number',
-      'Nova variável'
+      "Número válido",
+      "Número negativo",
+      "Not a Number",
+      "Nova variável",
     ],
-    answer: 'Not a Number'
+    answer: "Not a Number",
   },
 
   {
-    question: 'Como declarar uma variável em JavaScript?',
+    question: "Como declarar uma variável em JavaScript?",
     options: [
-      'let x = 10;',
-      'variável x = 10;',
-      'constante x = 10;',
-      'define x = 10;'
+      "let x = 10;",
+      "variável x = 10;",
+      "constante x = 10;",
+      "define x = 10;",
     ],
-    answer: 'let x = 10;'
+    answer: "let x = 10;",
   },
 
   {
-    question: 'Qual comando exibe uma mensagem no console do navegador?',
-    options: ['print()', 'console.log()', 'echo()', 'write()'],
-    answer: 'console.log()'
+    question: "Qual comando exibe uma mensagem no console do navegador?",
+    options: ["print()", "console.log()", "echo()", "write()"],
+    answer: "console.log()",
   },
 
   {
     question: "O que 'typeof' retorna em JavaScript?",
     options: [
-      'O tipo de dado',
-      'O tamanho do dado',
-      'O valor da variável',
-      'O nome da variável',
+      "O tipo de dado",
+      "O tamanho do dado",
+      "O valor da variável",
+      "O nome da variável",
     ],
-    answer: 'O tipo de dado'
-  }
+    answer: "O tipo de dado",
+  },
 ];
 
 export const intermediario = [
@@ -97,9 +97,9 @@ export const intermediario = [
       "Uma função dentro de um objeto",
       "Uma função que retorna outra função",
       "Uma função que tem acesso às variáveis fora do seu escopo",
-      "Uma função anônima sem nome"
+      "Uma função anônima sem nome",
     ],
-    answer: "Uma função que tem acesso às variáveis fora do seu escopo"
+    answer: "Uma função que tem acesso às variáveis fora do seu escopo",
   },
 
   {
@@ -108,9 +108,9 @@ export const intermediario = [
       "Cria uma nova função com um determinado valor para 'this'",
       "Adiciona um valor ao final de um array",
       "Remove um valor de um array",
-      "Retorna o tipo de dado de um valor"
+      "Retorna o tipo de dado de um valor",
     ],
-    answer: "Cria uma nova função com um determinado valor para 'this'"
+    answer: "Cria uma nova função com um determinado valor para 'this'",
   },
 
   {
@@ -119,9 +119,9 @@ export const intermediario = [
       "Não há diferença, ambos são usados para comparação estrita",
       "O '==' compara apenas os valores, o '===' compara valores e tipos",
       "O '===' compara apenas os valores, o '==' compara valores e tipos",
-      "O '==' realiza uma comparação de tipo estrito, e o '===' realiza uma comparação de tipo fraco"
+      "O '==' realiza uma comparação de tipo estrito, e o '===' realiza uma comparação de tipo fraco",
     ],
-    answer: "O '==' compara apenas os valores, o '===' compara valores e tipos"
+    answer: "O '==' compara apenas os valores, o '===' compara valores e tipos",
   },
 
   {
@@ -130,9 +130,10 @@ export const intermediario = [
       "Uma função que retorna um valor diretamente",
       "Uma forma de manipular chamadas assíncronas, retornando um valor futuro",
       "Uma função que só pode ser executada uma vez",
-      "Uma função que cria objetos"
+      "Uma função que cria objetos",
     ],
-    answer: "Uma forma de manipular chamadas assíncronas, retornando um valor futuro"
+    answer:
+      "Uma forma de manipular chamadas assíncronas, retornando um valor futuro",
   },
 
   {
@@ -141,10 +142,11 @@ export const intermediario = [
       "A capacidade do JavaScript de adicionar funções ao escopo global",
       "A elevação de variáveis e funções para o topo do seu escopo durante a execução",
       "A capacidade do JavaScript de armazenar dados em arrays",
-      "A execução de código assíncrono de forma síncrona"
+      "A execução de código assíncrono de forma síncrona",
     ],
-    answer: "A elevação de variáveis e funções para o topo do seu escopo durante a execução"
-  }
+    answer:
+      "A elevação de variáveis e funções para o topo do seu escopo durante a execução",
+  },
 ];
 
 export const avancado = [
@@ -154,9 +156,10 @@ export const avancado = [
       "Um tipo de laço de repetição utilizado para manipulação de eventos",
       "O processo que garante a execução do código assíncrono em JavaScript",
       "Uma função para tratamento de erros em JavaScript",
-      "A função que gera eventos no console"
+      "A função que gera eventos no console",
     ],
-    answer: "O processo que garante a execução do código assíncrono em JavaScript"
+    answer:
+      "O processo que garante a execução do código assíncrono em JavaScript",
   },
 
   {
@@ -165,9 +168,10 @@ export const avancado = [
       "Uma técnica para evitar múltiplos disparos de um evento em intervalos curtos de tempo",
       "Uma técnica para otimizar a performance de loops",
       "Uma maneira de manipular a memória de maneira eficiente",
-      "Um método para remover eventos do DOM"
+      "Um método para remover eventos do DOM",
     ],
-    answer: "Uma técnica para evitar múltiplos disparos de um evento em intervalos curtos de tempo"
+    answer:
+      "Uma técnica para evitar múltiplos disparos de um evento em intervalos curtos de tempo",
   },
 
   {
@@ -176,9 +180,10 @@ export const avancado = [
       "Uma API que permite rodar código JavaScript em threads separadas do principal",
       "Uma biblioteca para manipulação de DOM",
       "Uma técnica para garantir a execução de código em uma única thread",
-      "Uma funcionalidade que realiza o controle de erros em JavaScript"
+      "Uma funcionalidade que realiza o controle de erros em JavaScript",
     ],
-    answer: "Uma API que permite rodar código JavaScript em threads separadas do principal"
+    answer:
+      "Uma API que permite rodar código JavaScript em threads separadas do principal",
   },
 
   {
@@ -187,9 +192,9 @@ export const avancado = [
       "Armazenar os resultados de funções para evitar cálculos repetidos",
       "Armazenar dados em memória RAM para otimização de performance",
       "A técnica de adiar a execução de uma função até que seja necessária",
-      "A técnica de gerenciar a alocação de memória"
+      "A técnica de gerenciar a alocação de memória",
     ],
-    answer: "Armazenar os resultados de funções para evitar cálculos repetidos"
+    answer: "Armazenar os resultados de funções para evitar cálculos repetidos",
   },
 
   {
@@ -198,8 +203,8 @@ export const avancado = [
       "Funções que podem ser interrompidas e retomadas de onde pararam",
       "Funções assíncronas que retornam um 'Promise'",
       "Funções que geram eventos no DOM",
-      "Funções que geram múltiplos valores simultaneamente"
+      "Funções que geram múltiplos valores simultaneamente",
     ],
-    answer: "Funções que podem ser interrompidas e retomadas de onde pararam"
-  }
+    answer: "Funções que podem ser interrompidas e retomadas de onde pararam",
+  },
 ];

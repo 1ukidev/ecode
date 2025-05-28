@@ -1,12 +1,7 @@
-import {
-  SafeAreaView,
-  StyleSheet,
-  TouchableOpacity,
-  Text
-} from 'react-native';
-import { commonStyles } from '../Styles';
-import AntDesign from '@expo/vector-icons/AntDesign';
-import Screens from './Screens';
+import AntDesign from "@expo/vector-icons/AntDesign";
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { commonStyles } from "../Styles";
+import Screens from "./Screens";
 
 export default Home = ({ navigation }) => {
   const openClasses = () => {
@@ -37,16 +32,16 @@ const styles = StyleSheet.create({
     marginTop: 28,
     borderWidth: 1,
     borderRadius: 8,
-    borderColor: 'white',
+    borderColor: "white",
     padding: 18,
-    flexDirection: 'row',
-    alignItems: 'center'
+    flexDirection: "row",
+    alignItems: "center",
   },
 
   text: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
-    fontWeight: 'bold',
-    marginRight: 8
-  }
+    fontWeight: "bold",
+    marginRight: 8,
+  },
 });

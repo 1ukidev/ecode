@@ -1,5 +1,7 @@
-import Card from './Card';
-import MyButton from './MyButton';
-import MyInput from './MyInput';
+import Card from "./Card";
+import MyAlert from "./MyAlert";
+import MyButton from "./MyButton";
+import MyConfirm from "./MyConfirm";
+import MyInput from "./MyInput";
 
-export { Card, MyButton, MyInput };
+export { Card, MyAlert, MyButton, MyConfirm, MyInput };

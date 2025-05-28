@@ -1,18 +1,18 @@
+import { NavigationContainer } from "@react-navigation/native";
 import {
   createStackNavigator,
-  TransitionPresets
-} from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import { useState, useEffect } from 'react';
-import { headerOptions } from './src/Styles';
-import Database from './src/Database';
-import Login from './src/screens/Login';
-import Singup from './src/screens/Singup';
-import Home from './src/screens/Home';
-import Classes from './src/screens/Classes';
-import Questions from './src/screens/Questions';
-import Screens from './src/screens/Screens';
-import History from './src/screens/History';
+  TransitionPresets,
+} from "@react-navigation/stack";
+import { useEffect, useState } from "react";
+import Database from "./src/Database";
+import Classes from "./src/screens/Classes";
+import History from "./src/screens/History";
+import Home from "./src/screens/Home";
+import Login from "./src/screens/Login";
+import Questions from "./src/screens/Questions";
+import Screens from "./src/screens/Screens";
+import Singup from "./src/screens/Singup";
+import { headerOptions } from "./src/Styles";
 
 const Stack = createStackNavigator();
 
@@ -21,7 +21,7 @@ export default App = () => {
 
   useEffect(() => {
     const checkLogin = async () => {
-      const logged = await Database.getValue('logged');
+      const logged = await Database.getValue("logged");
       setInitialRoute(logged ? Screens.HOME : Screens.LOGIN);
     };
 
@@ -34,14 +34,14 @@ export default App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          ...TransitionPresets.SlideFromRightIOS
+          ...TransitionPresets.SlideFromRightIOS,
         }}
         initialRouteName={initialRoute}
       >
         <Stack.Screen
           name={Screens.LOGIN}
           component={Login}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name={Screens.SINGUP}

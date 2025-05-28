@@ -1,4 +1,4 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default Database = {
   storeValue: async (key, value) => {
@@ -19,5 +19,5 @@ export default Database = {
     } catch (error) {
       console.error(error);
     }
-  }
+  },
 };

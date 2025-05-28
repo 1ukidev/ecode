@@ -1,15 +1,14 @@
+import { useEffect, useState } from "react";
 import {
   SafeAreaView,
-  View,
+  StyleSheet,
   Text,
   TouchableOpacity,
-  StyleSheet
-} from 'react-native';
-import { useState, useEffect } from 'react';
-import { commonStyles } from '../Styles';
-import { MyButton } from '../components/Custom';
-import AntDesign from '@expo/vector-icons/AntDesign';
-import Database from '../Database';
+  View,
+} from "react-native";
+import Database from "../Database";
+import { commonStyles } from "../Styles";
+import { MyButton } from "../components/Custom";
 
 export default Questions = ({ navigation, route }) => {
   const { questions, level } = route.params;
@@ -18,15 +17,15 @@ export default Questions = ({ navigation, route }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
-  const [endTitle, setEndTitle] = useState('Parabéns!');
+  const [endTitle, setEndTitle] = useState("");
 
   const updateTitle = () => {
-    let title = '';
+    let title = "";
 
     if (showScore) {
-      title += 'Fim!';
+      title += "Fim!";
     } else {
-      title += (currentQuestion + 1) + 'º questão ';
+      title += currentQuestion + 1 + "º questão ";
     }
 
     navigation.setOptions({ title: title });
@@ -41,15 +40,14 @@ export default Questions = ({ navigation, route }) => {
       date: new Date().toLocaleString(),
       value: score,
       total: questions.length,
-      level: level
+      level: level,
     };
 
-    let scores = await Database.getValue('scores');
+    let scores = await Database.getValue("scores");
     scores = scores ? JSON.parse(scores) : [];
 
     scores.push(scoreData);
-    console.log(scores);
-    await Database.storeValue('scores', JSON.stringify(scores));
+    await Database.storeValue("scores", JSON.stringify(scores));
   };
 
   const handleAnswer = (option) => {
@@ -71,7 +69,9 @@ export default Questions = ({ navigation, route }) => {
         setCurrentQuestion(nextQuestion);
       } else {
         if (!(newScore >= 3 || newScore >= 6)) {
-          setEndTitle('Revise os conceitos para melhorar sua performance');
+          setEndTitle("Revise os conceitos para melhorar sua performance");
+        } else {
+          setEndTitle("Parabéns!\n+ 10 pontos");
         }
 
         await saveScore(newScore, level);
@@ -97,13 +97,17 @@ export default Questions = ({ navigation, route }) => {
       {showScore ? (
         <View style={styles.scoreContainer}>
           <Text style={styles.scoreText}>{endTitle}</Text>
-          <Text style={styles.scoreText}>Pontuação: {score} de {questions.length}</Text>
-          <MyButton text='Tentar novamente' onPress={restartQuiz} />
-          <MyButton text='Sair' onPress={exitQuiz} />
+          <Text style={styles.scoreText}>
+            Pontuação: {score} de {questions.length}
+          </Text>
+          <MyButton text="Tentar novamente" onPress={restartQuiz} />
+          <MyButton text="Sair" onPress={exitQuiz} />
         </View>
       ) : (
         <View style={styles.quizContainer}>
-          <Text style={styles.questionText}>{questions[currentQuestion].question}</Text>
+          <Text style={styles.questionText}>
+            {questions[currentQuestion].question}
+          </Text>
 
           {questions[currentQuestion].options.map((option, index) => {
             let optionStyle = styles.optionButton;
@@ -117,9 +121,9 @@ export default Questions = ({ navigation, route }) => {
             }
 
             return (
-              <TouchableOpacity 
-                key={index} 
-                style={optionStyle} 
+              <TouchableOpacity
+                key={index}
+                style={optionStyle}
                 onPress={() => handleAnswer(option)}
                 disabled={selectedOption !== null}
               >
@@ -128,12 +132,9 @@ export default Questions = ({ navigation, route }) => {
             );
           })}
 
-          {(selectedOption !== null) ? (
+          {selectedOption !== null ? (
             <TouchableOpacity onPress={() => loadAnswer()}>
-              <Text style={styles.continueText}>
-                Continuar
-                <AntDesign name="caretright" size={12} color="white" />
-              </Text>
+              <Text style={styles.continueText}>Continuar</Text>
             </TouchableOpacity>
           ) : null}
         </View>
@@ -144,74 +145,74 @@ export default Questions = ({ navigation, route }) => {
 
 const styles = StyleSheet.create({
   quizContainer: {
-    width: '100%',
-    alignItems: 'center'
+    width: "100%",
+    alignItems: "center",
   },
 
   questionText: {
     fontSize: 24,
-    fontWeight: 'bold',
-    color: 'white',
-    textAlign: 'center',
-    marginBottom: 30
+    fontWeight: "bold",
+    color: "white",
+    textAlign: "center",
+    marginBottom: 30,
   },
 
   optionButton: {
-    backgroundColor: '#333',
+    backgroundColor: "#333",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 8,
     marginVertical: 5,
-    width: '80%',
-    alignItems: 'center'
+    width: "80%",
+    alignItems: "center",
   },
 
   correctOption: {
-    backgroundColor: '#28a745',
+    backgroundColor: "#28a745",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 8,
     marginVertical: 5,
-    width: '80%',
-    alignItems: 'center'
+    width: "80%",
+    alignItems: "center",
   },
 
   wrongOption: {
-    backgroundColor: '#dc3545',
+    backgroundColor: "#dc3545",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 8,
     marginVertical: 5,
-    width: '80%',
-    alignItems: 'center'
+    width: "80%",
+    alignItems: "center",
   },
 
   optionText: {
     fontSize: 18,
-    color: '#fff',
-    textAlign: 'center'
+    color: "#fff",
+    textAlign: "center",
   },
 
   scoreContainer: {
-    alignItems: 'center'
+    alignItems: "center",
   },
 
   scoreText: {
     fontSize: 24,
-    fontWeight: 'bold',
-    color: 'white',
-    textAlign: 'center',
-    marginBottom: 20
+    fontWeight: "bold",
+    color: "white",
+    textAlign: "center",
+    marginBottom: 20,
   },
 
   continueText: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginTop: 28,
     padding: 10,
     borderWidth: 2,
     borderRadius: 8,
-    borderColor: 'white'
-  }
+    borderColor: "white",
+  },
 });
