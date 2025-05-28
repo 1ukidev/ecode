@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TouchableOpacity
-} from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default Card = ({ title, description, imageUrl, onPress }) => {
   return (
@@ -13,7 +7,7 @@ export default Card = ({ title, description, imageUrl, onPress }) => {
         <Image
           source={{ uri: imageUrl }}
           style={styles.image}
-          resizeMode='cover'
+          resizeMode="cover"
         />
       )}
       <View style={styles.contentContainer}>
@@ -27,34 +21,34 @@ export default Card = ({ title, description, imageUrl, onPress }) => {
 const styles = StyleSheet.create({
   card: {
     width: 300,
-    backgroundColor: 'black',
-    borderColor: 'white',
+    backgroundColor: "black",
+    borderColor: "white",
     borderWidth: 1,
     borderRadius: 8,
     elevation: 3,
     marginVertical: 20,
     marginHorizontal: 16,
-    overflow: 'hidden'
+    overflow: "hidden",
   },
 
   image: {
-    width: '100%',
-    height: 150
+    width: "100%",
+    height: 150,
   },
 
   contentContainer: {
-    padding: 16
+    padding: 16,
   },
 
   title: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 8,
-    color: 'white'
+    color: "white",
   },
 
   description: {
     fontSize: 14,
-    color: 'white'
-  }
+    color: "white",
+  },
 });
