@@ -12,7 +12,7 @@ import Login from "./src/screens/Login";
 import Questions from "./src/screens/Questions";
 import Screens from "./src/screens/Screens";
 import Singup from "./src/screens/Singup";
-import { headerOptions } from "./src/Styles";
+import { createHeaderOptions } from "./src/Styles";
 
 const Stack = createStackNavigator();
 
@@ -46,27 +46,27 @@ export default App = () => {
         <Stack.Screen
           name={Screens.SINGUP}
           component={Singup}
-          options={headerOptions()}
+          options={createHeaderOptions()}
         />
         <Stack.Screen
           name={Screens.HOME}
           component={Home}
-          options={headerOptions(true)}
+          options={createHeaderOptions(true)}
         />
         <Stack.Screen
           name={Screens.CLASSES}
           component={Classes}
-          options={headerOptions()}
+          options={createHeaderOptions()}
         />
         <Stack.Screen
           name={Screens.QUESTIONS}
           component={Questions}
-          options={headerOptions(true)}
+          options={createHeaderOptions(true)}
         />
         <Stack.Screen
           name={Screens.HISTORY}
           component={History}
-          options={headerOptions()}
+          options={createHeaderOptions()}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -9,7 +9,7 @@ export const commonStyles = StyleSheet.create({
   },
 });
 
-export const headerOptions = (hideBackButton = false) => ({
+export const createHeaderOptions = (hideBackButton = false) => ({
   headerLeft: hideBackButton ? () => null : undefined,
 
   headerStyle: {

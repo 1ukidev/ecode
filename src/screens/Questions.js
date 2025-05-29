@@ -50,16 +50,10 @@ export default Questions = ({ navigation, route }) => {
     await Database.storeValue("scores", JSON.stringify(scores));
   };
 
-  const handleAnswer = (option) => {
-    setSelectedOption(option);
-  };
-
   const loadAnswer = () => {
     const isCorrect = selectedOption === questions[currentQuestion].answer;
     const newScore = isCorrect ? score + 1 : score;
-    if (isCorrect) {
-      setScore(newScore);
-    }
+    setScore(newScore);
 
     (async () => {
       const nextQuestion = currentQuestion + 1;
@@ -124,7 +118,7 @@ export default Questions = ({ navigation, route }) => {
               <TouchableOpacity
                 key={index}
                 style={optionStyle}
-                onPress={() => handleAnswer(option)}
+                onPress={() => setSelectedOption(option)}
                 disabled={selectedOption !== null}
               >
                 <Text style={styles.optionText}>{option}</Text>
@@ -132,11 +126,11 @@ export default Questions = ({ navigation, route }) => {
             );
           })}
 
-          {selectedOption !== null ? (
-            <TouchableOpacity onPress={() => loadAnswer()}>
+          {selectedOption !== null && (
+            <TouchableOpacity onPress={loadAnswer}>
               <Text style={styles.continueText}>Continuar</Text>
             </TouchableOpacity>
-          ) : null}
+          )}
         </View>
       )}
     </SafeAreaView>
