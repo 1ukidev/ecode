@@ -52,14 +52,14 @@ export default Classes = ({ navigation }) => {
           imageUrl={imgs.code3}
           onPress={() => open(avancado, "Avançado")}
         />
-
-        <MyConfirm
-          show={showConfirm}
-          msg={confirmMsg}
-          onConfirm={confirmAction}
-          onCancel={() => setShowConfirm(false)}
-        />
       </ScrollView>
+
+      <MyConfirm
+        show={showConfirm}
+        msg={confirmMsg}
+        onConfirm={confirmAction}
+        onCancel={() => setShowConfirm(false)}
+      />
     </SafeAreaView>
   );
 };

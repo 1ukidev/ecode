@@ -65,7 +65,7 @@ export default Questions = ({ navigation, route }) => {
         if (!(newScore >= 3 || newScore >= 6)) {
           setEndTitle("Revise os conceitos para melhorar sua performance");
         } else {
-          setEndTitle("Parabéns!\n+ 10 pontos");
+          setEndTitle("Continue assim!");
         }
 
         await saveScore(newScore, level);

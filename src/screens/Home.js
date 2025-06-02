@@ -12,15 +12,24 @@ export default Home = ({ navigation }) => {
     navigation.navigate(Screens.HISTORY);
   };
 
+  const openAbout = () => {
+    navigation.navigate(Screens.ABOUT);
+  }
+
   return (
     <SafeAreaView style={commonStyles.container}>
       <TouchableOpacity style={styles.button} onPress={openClasses}>
-        <Text style={styles.text}>Aulas</Text>
+        <Text style={styles.text}>📕 Aulas</Text>
         <AntDesign name="caretright" size={10} color="white" />
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button} onPress={openScore}>
-        <Text style={styles.text}>Histórico</Text>
+        <Text style={styles.text}>📚 Histórico</Text>
+        <AntDesign name="caretright" size={10} color="white" />
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={openAbout}>
+        <Text style={styles.text}>❔ Sobre</Text>
         <AntDesign name="caretright" size={10} color="white" />
       </TouchableOpacity>
     </SafeAreaView>

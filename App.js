@@ -5,6 +5,7 @@ import {
 } from "@react-navigation/stack";
 import { useEffect, useState } from "react";
 import Database from "./src/Database";
+import About from "./src/screens/About";
 import Classes from "./src/screens/Classes";
 import History from "./src/screens/History";
 import Home from "./src/screens/Home";
@@ -20,12 +21,10 @@ export default App = () => {
   const [initialRoute, setInitialRoute] = useState(null);
 
   useEffect(() => {
-    const checkLogin = async () => {
+    (async () => {
       const logged = await Database.getValue("logged");
       setInitialRoute(logged ? Screens.HOME : Screens.LOGIN);
-    };
-
-    checkLogin();
+    })();
   }, []);
 
   if (initialRoute === null) return null;
@@ -66,6 +65,11 @@ export default App = () => {
         <Stack.Screen
           name={Screens.HISTORY}
           component={History}
+          options={createHeaderOptions()}
+        />
+        <Stack.Screen
+          name={Screens.ABOUT}
+          component={About}
           options={createHeaderOptions()}
         />
       </Stack.Navigator>

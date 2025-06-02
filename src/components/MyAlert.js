@@ -25,7 +25,7 @@ export default MyAlert = ({ show, msg, onConfirm, isError }) => {
 
 const styles = StyleSheet.create({
   alert: {
-    backgroundColor: "black",
+    backgroundColor: "#111111",
     borderWidth: 2,
     borderColor: "white",
     borderRadius: 10,
@@ -34,5 +34,6 @@ const styles = StyleSheet.create({
   alertText: {
     color: "white",
     fontWeight: "bold",
+    textAlign: "center",
   },
 });

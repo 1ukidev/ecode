@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity } from "react-native";
-import { MyButton, MyInput } from "../components/Custom";
+import { MyAlert, MyButton, MyInput } from "../components/Custom";
 import Database from "../Database";
 import { commonStyles } from "../Styles";
 import Util from "../Util";
@@ -24,7 +24,7 @@ export default Login = ({ navigation }) => {
       return false;
     }
 
-    if (!Util.validateEmail(email)) {
+    if (!Util.validateEmail(email, (msg) => error(msg))) {
       return false;
     }
 

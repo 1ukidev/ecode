@@ -30,7 +30,7 @@ export default MyConfirm = ({ show, msg, onConfirm, onCancel }) => {
 
 const styles = StyleSheet.create({
   alert: {
-    backgroundColor: "black",
+    backgroundColor: "#111111",
     borderWidth: 2,
     borderColor: "white",
     borderRadius: 10,
