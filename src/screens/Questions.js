@@ -16,6 +16,7 @@ export default Questions = ({ navigation, route }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
+  const [points, setPoints] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [endTitle, setEndTitle] = useState("");
 
@@ -41,6 +42,7 @@ export default Questions = ({ navigation, route }) => {
       value: score,
       total: questions.length,
       level: level,
+      points: points,
     };
 
     let scores = await Database.getValue("scores");
@@ -53,7 +55,9 @@ export default Questions = ({ navigation, route }) => {
   const loadAnswer = () => {
     const isCorrect = selectedOption === questions[currentQuestion].answer;
     const newScore = isCorrect ? score + 1 : score;
+    const newPoints = points + (isCorrect ? 10 : 4);
     setScore(newScore);
+    setPoints(newPoints);
 
     (async () => {
       const nextQuestion = currentQuestion + 1;
@@ -62,7 +66,7 @@ export default Questions = ({ navigation, route }) => {
       if (nextQuestion < questions.length) {
         setCurrentQuestion(nextQuestion);
       } else {
-        if (!(newScore >= 3 || newScore >= 6)) {
+        if (!(newScore >= 6)) {
           setEndTitle("Revise os conceitos para melhorar sua performance");
         } else {
           setEndTitle("Continue assim!");
@@ -92,7 +96,7 @@ export default Questions = ({ navigation, route }) => {
         <View style={styles.scoreContainer}>
           <Text style={styles.scoreText}>{endTitle}</Text>
           <Text style={styles.scoreText}>
-            Pontuação: {score} de {questions.length}
+            Acertou {score} de {questions.length} (+ {points} pontos)
           </Text>
           <MyButton text="Tentar novamente" onPress={restartQuiz} />
           <MyButton text="Sair" onPress={exitQuiz} />

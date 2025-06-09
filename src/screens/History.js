@@ -16,10 +16,8 @@ export default History = () => {
   const [scores, setScores] = useState([]);
   const [stats, setStats] = useState({
     totalTests: 0,
-    averageScore: 0,
-    bestScore: 0,
     totalPoints: 0,
-    accuracy: 0,
+    bestScore: 0,
     streak: 0,
   });
 
@@ -37,20 +35,14 @@ export default History = () => {
 
     const totalTests = scoresArray.length;
     const totalPoints = scoresArray.reduce(
-      (sum, score) => sum + score.value,
+      (sum, score) => sum + score.points,
       0
     );
-    const totalPossible = scoresArray.reduce(
-      (sum, score) => sum + score.total,
-      0
-    );
-    const averageScore = Math.round((totalPoints / totalPossible) * 100);
     const bestScore = Math.max(
       ...scoresArray.map((score) =>
         Math.round((score.value / score.total) * 100)
       )
     );
-    const accuracy = Math.round((totalPoints / totalPossible) * 100);
 
     let currentStreak = 0;
     for (let i = scoresArray.length - 1; i >= 0; i--) {
@@ -64,10 +56,8 @@ export default History = () => {
 
     setStats({
       totalTests,
-      averageScore,
-      bestScore,
       totalPoints,
-      accuracy,
+      bestScore,
       streak: currentStreak,
     });
   };
@@ -130,8 +120,8 @@ export default History = () => {
                       value={stats.totalTests}
                     />
                     <StatCard
-                      title="Média geral"
-                      value={`${stats.averageScore}%`}
+                      title="Pontos"
+                      value={`${stats.totalPoints}`}
                     />
                     <StatCard
                       title="Melhor resultado"

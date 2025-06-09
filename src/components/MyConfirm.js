@@ -39,5 +39,6 @@ const styles = StyleSheet.create({
   alertText: {
     color: "white",
     fontWeight: "bold",
+    fontSize: 16,
   },
 });
