@@ -19,6 +19,7 @@ export default Questions = ({ navigation, route }) => {
   const [points, setPoints] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [endTitle, setEndTitle] = useState("");
+  const [feedback, setFeedback] = useState("");
 
   const updateTitle = () => {
     let title = "";
@@ -51,6 +52,16 @@ export default Questions = ({ navigation, route }) => {
     scores.push(scoreData);
     await Database.storeValue("scores", JSON.stringify(scores));
   };
+
+  const handleAnswer = (option) => {
+    setSelectedOption(option);
+    const isCorrect = option === questions[currentQuestion].answer;
+    setFeedback(
+      isCorrect
+        ? `✅ Correto! ${questions[currentQuestion].explanation}`
+        : `❌ Errado! ${questions[currentQuestion].explanation}`
+    );
+  }
 
   const loadAnswer = () => {
     const isCorrect = selectedOption === questions[currentQuestion].answer;
@@ -122,13 +133,17 @@ export default Questions = ({ navigation, route }) => {
               <TouchableOpacity
                 key={index}
                 style={optionStyle}
-                onPress={() => setSelectedOption(option)}
+                onPress={() => handleAnswer(option)}
                 disabled={selectedOption !== null}
               >
                 <Text style={styles.optionText}>{option}</Text>
               </TouchableOpacity>
             );
           })}
+
+          {selectedOption && (
+            <Text style={styles.feedback}>{feedback}</Text>
+          )}
 
           {selectedOption !== null && (
             <TouchableOpacity onPress={loadAnswer}>
@@ -213,4 +228,12 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: "white",
   },
+
+  feedback: {
+    marginTop: 20,
+    fontSize: 18,
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+  }
 });
